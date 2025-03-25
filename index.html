@@ -5,43 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Revendedora</title>
     <style>
-        body, html {
+        * {
             margin: 0;
             padding: 0;
-            height: 100%;
+            box-sizing: border-box;
             font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+        }
+
+        body {
             background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 768px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
         }
 
         .banner {
             width: 100%;
-            height: 100vh;
-            background: url('https://source.unsplash.com/1080x1920/?fashion') no-repeat center center/cover;
+            height: 300px;
+            background: url('https://i.postimg.cc/T3MxPNLD/Banner-para-site-de-Moda-ou-Loja-de-roupas-minimalista-e-elegante-Azul-Laranja-e-Branco-1.png') no-repeat center center/cover;
             display: flex;
-            align-items: center;
             justify-content: center;
-            color: #fff;
-            text-align: center;
-            font-size: 2em;
+            align-items: center;
         }
 
-        form {
-            background: #fff;
+        .form-box {
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            margin-top: -30px;
+            text-align: center;
         }
 
-        input, button {
-            width: calc(100% - 20px);
+        h2 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        input, select, button {
+            width: 100%;
             padding: 10px;
-            margin: 5px 0;
+            margin-bottom: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
         }
@@ -50,6 +63,8 @@
             background-color: #000;
             color: #fff;
             cursor: pointer;
+            font-size: 1em;
+            transition: 0.3s;
         }
 
         button:hover {
@@ -58,19 +73,26 @@
     </style>
 </head>
 <body>
-
-    <div class="banner">
-        Seja uma Revendedora!
+    <div class="container">
+        <div class="banner">
+            <h1 style="color: #fff; font-size: 24px; background: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 5px;">DESEJA LEVAR MY MUSE PARA SUA LOJA?</h1>
+        </div>
+        <div class="form-box">
+            <h2>Cadastro de Revendedora</h2>
+            <form>
+                <input type="text" placeholder="Nome *" required>
+                <input type="email" placeholder="E-mail *" required>
+                <input type="tel" placeholder="Whatsapp *" required>
+                <select required>
+                    <option value="">Selecione...</option>
+                    <option value="Loja Física">Loja Física</option>
+                    <option value="Loja Online">Loja Online</option>
+                </select>
+                <input type="text" placeholder="CNPJ *" required>
+                <input type="text" placeholder="Site ou Instagram *" required>
+                <button type="submit">QUERO SER REVENDEDORA</button>
+            </form>
+        </div>
     </div>
-
-    <form action="https://formsubmit.co/mymusebr@icloud.com" method="POST">
-        <input type="text" name="nome" placeholder="Digite seu nome" required>
-        <input type="email" name="email" placeholder="Digite seu e-mail" required>
-        <input type="tel" name="whatsapp" placeholder="Whatsapp" required>
-        <input type="text" name="cnpj" placeholder="CNPJ" required>
-        <input type="text" name="instagram" placeholder="Site ou Instagram" required>
-        <button type="submit">Quero ser revendedora</button>
-    </form>
-
 </body>
 </html>
